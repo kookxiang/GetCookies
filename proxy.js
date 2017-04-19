@@ -17,10 +17,10 @@
         });
     }
 
-    function parseUrl(url) {
+    function getDomain(url) {
         var a = document.createElement('a');
         a.href = url;
-        return a.protocol + '//' + a.hostname;
+        return a.hostname;
     }
 
     window.addEventListener('message', function (event) {
@@ -37,11 +37,11 @@
                 }, '*');
                 break;
             case 'getCookie':
-                var options = { site: parseUrl(event.data.site) };
+                var options = { site: event.data.site };
                 if (!options.site) {
                     event.source.postMessage({ id: event.data.id, succeed: false, message: 'site url is not provided' });
                 }
-                if (!confirm('是否允许 ' + tldjs.getDomain(event.origin) + ' 获取你在网站 ' + options.site + ' 上的 Cookie？')) return;
+                if (!confirm('是否允许 ' + getDomain(event.origin) + ' 获取你在网站 ' + getDomain(options.site) + ' 上的 Cookie？')) return;
                 chrome.runtime.sendMessage(extensionId, options, {}, function (result) {
                     result.id = event.data.id
                     event.source.postMessage(result, '*');
