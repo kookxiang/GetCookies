@@ -15,6 +15,7 @@ chrome.runtime.onMessageExternal.addListener((options, sender, callback) => {
                 cookie: cookies.map(x => `${x.name}=${x.value}`).join('; ')
             });
         });
+        return true;
     } catch (e) {
         callback({ succeed: false, message: e.message });
     }
