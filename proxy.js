@@ -10,7 +10,6 @@
     } else {
         isChrome = true;
         chrome.runtime.sendMessage(extensionId, { action: 'ping' }, {}, function (result) {
-            console.log(result);
             if (!result === true) {
                 isAvailable = true;
             }
