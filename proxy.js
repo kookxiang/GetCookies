@@ -17,10 +17,10 @@
         });
     }
 
-    function getDomain(url) {
+    function parseUrl(url) {
         var a = document.createElement('a');
         a.href = url;
-        return a.hostname;
+        return a.protocol + '//' + a.hostname;
     }
 
     window.addEventListener('message', function (event) {
@@ -37,7 +37,7 @@
                 }, '*');
                 break;
             case 'getCookie':
-                var options = { site: getDomain(event.data.site) };
+                var options = { site: parseUrl(event.data.site) };
                 if (!options.site) {
                     event.source.postMessage({ id: event.data.id, succeed: false, message: 'site url is not provided' });
                 }

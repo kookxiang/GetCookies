@@ -1,6 +1,6 @@
 chrome.runtime.onMessageExternal.addListener((options, sender, callback) => {
     try {
-        if (options.type === 'ping') callback(true);
+        if (options.action === 'ping') callback(true);
         const { site } = options;
         if (!site.match(/^(http|https):/)) {
             throw new Error('Illegal site url');

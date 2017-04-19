@@ -13,7 +13,6 @@
     "manifest_version": 2,
     "permissions": [
         "cookies",
-        "tabs",
         "http://*/*",
         "https://*/*"
     ],
@@ -23,5 +22,5 @@
         ]
     },
     "name": "__MSG_appName__",
-    "version": "1.0.0"
+    "version": "1.0.1"
 }
