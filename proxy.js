@@ -10,7 +10,7 @@
     } else {
         isChrome = true;
         chrome.runtime.sendMessage(extensionId, { action: 'ping' }, {}, function (result) {
-            if (!result === true) {
+            if (result === true) {
                 isAvailable = true;
             }
             parent.postMessage({ type: 'cookie-proxy-loaded' }, '*');
