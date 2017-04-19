@@ -1,0 +1,8 @@
+{
+    "appName": {
+        "message": "Get Cookie API"
+    },
+    "description": {
+        "message": "通过 API 获取其他网站的 Cookie."
+    }
+}

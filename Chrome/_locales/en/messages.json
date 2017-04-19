@@ -1,0 +1,8 @@
+{
+    "appName": {
+        "message": "Get Cookie API"
+    },
+    "description": {
+        "message": "Get cookies across sites via API."
+    }
+}
