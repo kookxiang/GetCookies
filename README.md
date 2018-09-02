@@ -1,5 +1,7 @@
 # GetCookies
-Get cookies across sites via Chrome API
+Get cookies across sites via Api with Chrome Addon
+If you want to use your own proxy server you should change https://kookxiang.github.io domain with your own.
+Or you can just compile Chrome addon and use default server.
 
 # How To Use
 ```html
